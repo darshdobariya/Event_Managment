@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserLoginBottom">
+
+
+
+    <ImageView
+        android:id="@+id/btnBackUserLogin"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/AccentColor" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Events For :"
+        android:textSize="19dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackUserLogin" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="7dp"
+        android:layout_marginEnd="6dp"
+        android:clipToPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+        <View
+            android:id="@+id/showeventindicator"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/gradient_bg" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/showEventTab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tab_bg"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="#000000" />
+
+    </FrameLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/eventviewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
